@@ -11,7 +11,20 @@
 @interface pictureManipulatorViewController ()
 
 @end
+
+//variables for model, should be in a seperate class
 CGPoint _clickDown;
+float _penguinSlider;
+float _polarbearSlider;
+bool _penguinLabel = FALSE;
+bool _polarbearLabel = FALSE;
+NSString *_penguinName = @"penguin-chick.jpeg";
+NSString *_polarbearName = @"PolarBear.jpeg";
+NSString *_penguinLabelText = @"Penguin";
+NSString *_polarbearLabelText = @"Polar Bear";
+bool _isPenguinSelected = TRUE;
+
+
 @implementation pictureManipulatorViewController
 
 
@@ -20,6 +33,8 @@ CGPoint _clickDown;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     _imageButton.alpha = .5;
+    _penguinSlider = .5;
+    _polarbearSlider = .5;
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,6 +98,13 @@ CGPoint _clickDown;
         _alphaSlider.value = value;
     }
     _imageButton.alpha = value;
+    
+    if(_isPenguinSelected == true){
+        _penguinSlider = value;
+    }
+    else{
+        _polarbearSlider = value;
+    }
 
 }
 
@@ -92,22 +114,78 @@ CGPoint _clickDown;
 
 - (IBAction)swapPhotos:(UISegmentedControl*)sender {
     if(sender.selectedSegmentIndex == 0){
-        [_imageButton setImage:[UIImage imageNamed:@"penguin-chick.jpeg"] forState:UIControlStateNormal];
-        _imageLabel.text = @"Penguin";
+        _isPenguinSelected = true;
+        [_imageButton setImage:[UIImage imageNamed:_penguinName] forState:UIControlStateNormal];
+        _imageLabel.text = _penguinLabelText;
+        _alphaField.text = [NSString stringWithFormat:@"%d", (int)round(_penguinSlider*100)];
+        _alphaSlider.value = _penguinSlider;
+        _imageButton.alpha = _penguinSlider;
+        _imageLabel.hidden = _penguinLabel;
+        [__labelSwitch setOn: (!_penguinLabel)];
+        
+        
     }
     else{
-        [_imageButton setImage:[UIImage imageNamed:@"PolarBear.jpeg"] forState:UIControlStateNormal];
-        _imageLabel.text = @"Polar Bear";
+        _isPenguinSelected = false;
+        [_imageButton setImage:[UIImage imageNamed:_polarbearName] forState:UIControlStateNormal];
+        _imageLabel.text = _polarbearLabelText;
+        _alphaField.text = [NSString stringWithFormat:@"%d", (int)round(_polarbearSlider*100)];
+        _alphaSlider.value = _polarbearSlider;
+        _imageLabel.hidden = _polarbearLabel;
+        _imageButton.alpha = _polarbearSlider;
+        [__labelSwitch setOn: (!_polarbearLabel)];
     }
 }
 
 - (IBAction)labelsOff:(UISwitch *)sender {
     if(sender.isOn){
         _imageLabel.hidden = false;
+        if(_isPenguinSelected){
+            _penguinLabel = false;
+        }
+        else{
+            _polarbearLabel = false;
+        }
     }
     else{
         _imageLabel.hidden = true;
+        if(_isPenguinSelected){
+            _penguinLabel = true;
+        }
+        else{
+            _polarbearLabel = true;
+        }
     }
+}
+
+- (IBAction)_screenwasSwiped:(id)sender {
+    if(!_isPenguinSelected){
+        _isPenguinSelected = true;
+        [_imageButton setImage:[UIImage imageNamed:_penguinName] forState:UIControlStateNormal];
+        _imageLabel.text = _penguinLabelText;
+        _alphaField.text = [NSString stringWithFormat:@"%d", (int)round(_penguinSlider*100)];
+        _alphaSlider.value = _penguinSlider;
+        _imageButton.alpha = _penguinSlider;
+        _imageLabel.hidden = _penguinLabel;
+        [__labelSwitch setOn: (!_penguinLabel)];
+        [_imageSelector setSelectedSegmentIndex:0];
+        
+        
+    }
+    else{
+        _isPenguinSelected = false;
+        [_imageButton setImage:[UIImage imageNamed:_polarbearName] forState:UIControlStateNormal];
+        _imageLabel.text = _polarbearLabelText;
+        _alphaField.text = [NSString stringWithFormat:@"%d", (int)round(_polarbearSlider*100)];
+        _alphaSlider.value = _polarbearSlider;
+        _imageLabel.hidden = _polarbearLabel;
+        _imageButton.alpha = _polarbearSlider;
+        [__labelSwitch setOn: (!_polarbearLabel)];
+        [_imageSelector setSelectedSegmentIndex:1];
+    }
+}
+
+- (IBAction)_tappedImage:(id)sender {
 }
 
 - (IBAction)tappedTheBackGround:(id)sender {

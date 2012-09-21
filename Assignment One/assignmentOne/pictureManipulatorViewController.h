@@ -10,6 +10,7 @@
 #import <math.h>
 
 @interface pictureManipulatorViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISegmentedControl *imageSelector;
 
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
 @property (weak, nonatomic) IBOutlet UISwitch *_labelSwitch;
@@ -24,7 +25,9 @@
 - (IBAction)swapPhotos:(id)sender;
 - (IBAction)labelsOff:(id)sender;
 
+- (IBAction)_screenwasSwiped:(id)sender;
 
+- (IBAction)_tappedImage:(id)sender;
 
 - (IBAction)tappedTheBackGround:(id)sender;
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA54B46A160BB11100DA8789 /* PolarBear.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DA54B469160BB11100DA8789 /* PolarBear.jpeg */; };
 		DA61C32C160B7C2B00601018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA61C32B160B7C2B00601018 /* UIKit.framework */; };
 		DA61C32E160B7C2B00601018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA61C32D160B7C2B00601018 /* Foundation.framework */; };
 		DA61C330160B7C2B00601018 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA61C32F160B7C2B00601018 /* CoreGraphics.framework */; };
@@ -20,10 +19,12 @@
 		DA61C345160B7C2B00601018 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA61C343160B7C2B00601018 /* MainStoryboard.storyboard */; };
 		DA61C348160B7C2B00601018 /* pictureManipulatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA61C347160B7C2B00601018 /* pictureManipulatorViewController.m */; };
 		DA61C34F160B7C5400601018 /* penguin-chick.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DA61C34E160B7C5400601018 /* penguin-chick.jpeg */; };
+		DA9F6151160E504D00E60A01 /* maximize_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F6150160E504D00E60A01 /* maximize_icon.png */; };
+		DA9F6154160E505500E60A01 /* Minus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F6153160E505500E60A01 /* Minus_icon.png */; };
+		DA9F6156160ECC8B00E60A01 /* polar_bear.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DA9F6155160ECC8B00E60A01 /* polar_bear.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA54B469160BB11100DA8789 /* PolarBear.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PolarBear.jpeg; sourceTree = "<group>"; };
 		DA61C327160B7C2B00601018 /* assignmentOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignmentOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA61C32B160B7C2B00601018 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DA61C32D160B7C2B00601018 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,6 +42,9 @@
 		DA61C346160B7C2B00601018 /* pictureManipulatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pictureManipulatorViewController.h; sourceTree = "<group>"; };
 		DA61C347160B7C2B00601018 /* pictureManipulatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pictureManipulatorViewController.m; sourceTree = "<group>"; };
 		DA61C34E160B7C5400601018 /* penguin-chick.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "penguin-chick.jpeg"; sourceTree = "<group>"; };
+		DA9F6150160E504D00E60A01 /* maximize_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maximize_icon.png; sourceTree = "<group>"; };
+		DA9F6153160E505500E60A01 /* Minus_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Minus_icon.png; sourceTree = "<group>"; };
+		DA9F6155160ECC8B00E60A01 /* polar_bear.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = polar_bear.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 		DA61C332160B7C2B00601018 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA54B469160BB11100DA8789 /* PolarBear.jpeg */,
+				DA9F6155160ECC8B00E60A01 /* polar_bear.jpeg */,
+				DA9F6153160E505500E60A01 /* Minus_icon.png */,
+				DA9F6150160E504D00E60A01 /* maximize_icon.png */,
 				DA61C34E160B7C5400601018 /* penguin-chick.jpeg */,
 				DA61C333160B7C2B00601018 /* assignmentOne-Info.plist */,
 				DA61C334160B7C2B00601018 /* InfoPlist.strings */,
@@ -171,7 +177,9 @@
 				DA61C342160B7C2B00601018 /* Default-568h@2x.png in Resources */,
 				DA61C345160B7C2B00601018 /* MainStoryboard.storyboard in Resources */,
 				DA61C34F160B7C5400601018 /* penguin-chick.jpeg in Resources */,
-				DA54B46A160BB11100DA8789 /* PolarBear.jpeg in Resources */,
+				DA9F6151160E504D00E60A01 /* maximize_icon.png in Resources */,
+				DA9F6154160E505500E60A01 /* Minus_icon.png in Resources */,
+				DA9F6156160ECC8B00E60A01 /* polar_bear.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

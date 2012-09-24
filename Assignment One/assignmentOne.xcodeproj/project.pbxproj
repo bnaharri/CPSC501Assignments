@@ -22,6 +22,7 @@
 		DA9F6151160E504D00E60A01 /* maximize_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F6150160E504D00E60A01 /* maximize_icon.png */; };
 		DA9F6154160E505500E60A01 /* Minus_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F6153160E505500E60A01 /* Minus_icon.png */; };
 		DA9F6156160ECC8B00E60A01 /* polar_bear.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DA9F6155160ECC8B00E60A01 /* polar_bear.jpeg */; };
+		DA9F61591610AB8200E60A01 /* pictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F61581610AB8200E60A01 /* pictureModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		DA9F6150160E504D00E60A01 /* maximize_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maximize_icon.png; sourceTree = "<group>"; };
 		DA9F6153160E505500E60A01 /* Minus_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Minus_icon.png; sourceTree = "<group>"; };
 		DA9F6155160ECC8B00E60A01 /* polar_bear.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = polar_bear.jpeg; sourceTree = "<group>"; };
+		DA9F61571610AB8200E60A01 /* pictureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pictureModel.h; sourceTree = "<group>"; };
+		DA9F61581610AB8200E60A01 /* pictureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pictureModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				DA61C33A160B7C2B00601018 /* pictureManipulatorAppDelegate.h */,
+				DA9F61571610AB8200E60A01 /* pictureModel.h */,
+				DA9F61581610AB8200E60A01 /* pictureModel.m */,
 				DA61C33B160B7C2B00601018 /* pictureManipulatorAppDelegate.m */,
 				DA61C343160B7C2B00601018 /* MainStoryboard.storyboard */,
 				DA61C346160B7C2B00601018 /* pictureManipulatorViewController.h */,
@@ -193,6 +198,7 @@
 				DA61C338160B7C2B00601018 /* main.m in Sources */,
 				DA61C33C160B7C2B00601018 /* pictureManipulatorAppDelegate.m in Sources */,
 				DA61C348160B7C2B00601018 /* pictureManipulatorViewController.m in Sources */,
+				DA9F61591610AB8200E60A01 /* pictureModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

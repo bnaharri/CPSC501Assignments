@@ -146,7 +146,6 @@
                     <connections>
                         <outlet property="_labelSwitch" destination="kAv-RT-6a2" id="GuD-cS-ysn"/>
                         <outlet property="_maximizeImageButton" destination="OoD-Vw-hq0" id="KXI-D1-BJp"/>
-                        <outlet property="addPhotoButton" destination="6wC-W3-uBR" id="g4Q-BB-mLc"/>
                         <outlet property="alphaField" destination="uRG-mN-YQG" id="aD5-pJ-CYc"/>
                         <outlet property="alphaSlider" destination="a3B-WF-NT7" id="RyT-JV-d5i"/>
                         <outlet property="imageButton" destination="JDc-hJ-7tg" id="NaO-wU-Iwm"/>
@@ -164,6 +163,35 @@
         <image name="maximize_icon.png" width="128" height="128"/>
         <image name="penguin-chick.jpeg" width="404" height="500"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="pictureManipulatorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/pictureManipulatorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="_addPicture:"/>
+                <relationship kind="action" name="_maximizePressed:"/>
+                <relationship kind="action" name="doneEditing:"/>
+                <relationship kind="action" name="dragImage:forEvent:"/>
+                <relationship kind="action" name="imageClicked:forEvent:"/>
+                <relationship kind="action" name="labelsOff:"/>
+                <relationship kind="action" name="swapPhotos:"/>
+                <relationship kind="action" name="tappedTheBackGround:"/>
+                <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
+                <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>
+                <relationship kind="action" name="valueChanged:"/>
+                <relationship kind="outlet" name="_labelSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="_maximizeImageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="alphaField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="alphaSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="imageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageLabel" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageSelector" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="opacityLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

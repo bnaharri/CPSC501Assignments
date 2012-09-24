@@ -25,7 +25,6 @@ NSString *_polarbearName = @"polar_bear.jpeg";
 NSString *_penguinLabelText = @"Penguin";
 NSString *_polarbearLabelText = @"Polar Bear";
 bool _isPenguinSelected = TRUE;
-int _selectedIndex = 0;
 bool _showPopUp = true;
 bool _maximizedMode = false;
 
@@ -41,21 +40,18 @@ bool _maximizedMode = false;
     _penguinSlider = .5;
     _polarbearSlider = .5;
     
-    _imageArray = [[NSMutableArray alloc] init];
-    pictureModel *penguinPicture = [[pictureModel alloc] init];
+    pictureModel *penguinPicture;
     
     penguinPicture.labelText = @"Penguin";
     penguinPicture.image = [UIImage imageNamed:@"penguin-chick.jpeg"];
     penguinPicture.alphaSlider = .5;
-    penguinPicture.hideLabel = false;
     
     [_imageArray addObject:penguinPicture];
     
-    pictureModel *polarbearPicture = [[pictureModel alloc] init];
+    pictureModel *polarbearPicture;
     polarbearPicture.labelText = @"Polar Bear";
     polarbearPicture.image = [UIImage imageNamed:@"polar_bear.jpeg"];
     polarbearPicture.alphaSlider = .5;
-    polarbearPicture.hideLabel = false;
     
     [_imageArray addObject:polarbearPicture];
 }
@@ -112,16 +108,20 @@ bool _maximizedMode = false;
 //store where we originally clicked on the screen
 - (IBAction)imageClicked:(id)sender forEvent:(UIEvent *)event {
     if(_maximizedMode){
-        [self _hideUI:false];
+        _imageLabel.hidden = false;
+        _imageSelector.hidden = false;
+        _alphaSlider.hidden = false;
+        _alphaField.hidden = false;
+        __labelSwitch.hidden = false;
+        __maximizeImageButton.hidden = false;
+        _opacityLabel.hidden = false;
         [self swapPhotos:_imageSelector];
-        _maximizedMode = false;
     }
     //get where we clicked on the screen
     _clickDown = [[[event allTouches] anyObject] locationInView:self.view];
+    
 }
-
 - (IBAction)valueChanged:(id)sender {
-    pictureModel *current = [_imageArray objectAtIndex: _selectedIndex];
     float value;
     if([sender isKindOfClass:[UISlider class]]){
         value = _alphaSlider.value;
@@ -133,37 +133,68 @@ bool _maximizedMode = false;
     }
     _imageButton.alpha = value;
     
-    current.alphaSlider = value;
+    if(_isPenguinSelected == true){
+        _penguinSlider = value;
+    }
+    else{
+        _polarbearSlider = value;
+    }
+
 }
 
 - (IBAction)doneEditing:(id)sender {
-    pictureModel *current = [_imageArray objectAtIndex: _selectedIndex];
-    current.labelText = _imageLabel.text;
+    if(_isPenguinSelected){
+        _penguinLabelText = _imageLabel.text;
+    }
+    else{
+        _polarbearLabelText = _imageLabel.text;
+    }
     [sender resignFirstResponder];
 }
 
 - (IBAction)swapPhotos:(UISegmentedControl*)sender {
-    pictureModel *current = [_imageArray objectAtIndex: sender.selectedSegmentIndex];
-    [_imageButton setImage:current.image forState:UIControlStateNormal];
-    _imageLabel.text = current.labelText;
-    _alphaSlider.value = current.alphaSlider;
-    _alphaField.text = [NSString stringWithFormat:@"%d", (int)round(current.alphaSlider*100)];
-    _imageLabel.hidden = current.hideLabel;
-    [__labelSwitch setOn:!current.hideLabel];
-    _selectedIndex = sender.selectedSegmentIndex;
-    _imageButton.alpha = current.alphaSlider;
+    if(sender.selectedSegmentIndex == 0){
+        _isPenguinSelected = true;
+        [_imageButton setImage:[UIImage imageNamed:_penguinName] forState:UIControlStateNormal];
+        _imageLabel.text = _penguinLabelText;
+        _alphaField.text = [NSString stringWithFormat:@"%d", (int)round(_penguinSlider*100)];
+        _alphaSlider.value = _penguinSlider;
+        _imageButton.alpha = _penguinSlider;
+        _imageLabel.hidden = _penguinLabel;
+        [__labelSwitch setOn: (!_penguinLabel)];
+        
+        
+    }
+    else{
+        _isPenguinSelected = false;
+        [_imageButton setImage:[UIImage imageNamed:_polarbearName] forState:UIControlStateNormal];
+        _imageLabel.text = _polarbearLabelText;
+        _alphaField.text = [NSString stringWithFormat:@"%d", (int)round(_polarbearSlider*100)];
+        _alphaSlider.value = _polarbearSlider;
+        _imageLabel.hidden = _polarbearLabel;
+        _imageButton.alpha = _polarbearSlider;
+        [__labelSwitch setOn: (!_polarbearLabel)];
+    }
 }
 
 - (IBAction)labelsOff:(UISwitch *)sender {
-    pictureModel *current = [_imageArray objectAtIndex: _selectedIndex];
-    
     if(sender.isOn){
         _imageLabel.hidden = false;
-        current.hideLabel = false;
+        if(_isPenguinSelected){
+            _penguinLabel = false;
+        }
+        else{
+            _polarbearLabel = false;
+        }
     }
     else{
         _imageLabel.hidden = true;
-        current.hideLabel = true;
+        if(_isPenguinSelected){
+            _penguinLabel = true;
+        }
+        else{
+            _polarbearLabel = true;
+        }
     }
 }
 
@@ -172,32 +203,21 @@ bool _maximizedMode = false;
     [self animateTextField: textField up: true];
 }
 
-- (void)_hideUI:(bool)value{
-    _imageLabel.hidden = value;
-    _imageSelector.hidden = value;
-    _alphaSlider.hidden = value;
-    _alphaField.hidden = value;
-    __labelSwitch.hidden = value;
-    __maximizeImageButton.hidden = value;
-    _opacityLabel.hidden = value;
-    _addPhotoButton.hidden = value;
-}
-
 - (IBAction)_maximizePressed:(id)sender {
-    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
     [_imageButton setBounds:screenRect];
-    
     _imageButton.center = CGPointMake(screenRect.size.width/2.0, screenRect.size.height/2.0);
-    
-    [self _hideUI:true];
+    _imageLabel.hidden = true;
+    _imageSelector.hidden = true;
+    _alphaSlider.hidden = true;
+    _alphaField.hidden = true;
+    __labelSwitch.hidden = true;
+    __maximizeImageButton.hidden = true;
+    _opacityLabel.hidden = true;
     _maximizedMode = true;
-    
     if(_imageButton.alpha == 0){
         _imageButton.alpha = .1;
     }
-    
     if(_showPopUp){
         _showPopUp = false;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Maximizing Photo"
@@ -260,8 +280,12 @@ bool _maximizedMode = false;
 }
 
 - (IBAction)tappedTheBackGround:(id)sender {
-    pictureModel *current = [_imageArray objectAtIndex: _selectedIndex];
-    current.labelText = _imageLabel.text;
+    if(_isPenguinSelected){
+        _penguinLabelText = _imageLabel.text;
+    }
+    else{
+        _polarbearLabelText = _imageLabel.text;
+    }
     [_alphaField resignFirstResponder];
     [_imageLabel resignFirstResponder];
 }

@@ -236,9 +236,11 @@ bool _maximizedMode = false;
     newImage.hideLabel = false;
     newImage.alphaSlider = .5;
     [_imageArray addObject:newImage];
-    _selectedIndex = [_imageArray count]-1;
+    int arrayLength = [_imageArray count];
+    [_imageSelector insertSegmentWithTitle:[NSString stringWithFormat:@"%d", arrayLength] atIndex:arrayLength-1 animated:false];
+    [_imageSelector setSelectedSegmentIndex: arrayLength-1];
+    [self swapPhotos:_imageSelector];
     
-    [_imageSelector insertSegmentWithTitle:[NSString stringWithFormat:@"%d", [_imageArray count]] atIndex:_selectedIndex animated:false];
     [self dismissModalViewControllerAnimated:YES];
 }
 

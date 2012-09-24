@@ -13,8 +13,6 @@
 @end
 
 //variables for model, should be in a seperate class
-
-NSMutableArray *_imageArray;
 CGPoint _clickDown;
 float _penguinSlider;
 float _polarbearSlider;
@@ -39,21 +37,6 @@ bool _maximizedMode = false;
     _imageButton.alpha = .5;
     _penguinSlider = .5;
     _polarbearSlider = .5;
-    
-    pictureModel *penguinPicture;
-    
-    penguinPicture.labelText = @"Penguin";
-    penguinPicture.image = [UIImage imageNamed:@"penguin-chick.jpeg"];
-    penguinPicture.alphaSlider = .5;
-    
-    [_imageArray addObject:penguinPicture];
-    
-    pictureModel *polarbearPicture;
-    polarbearPicture.labelText = @"Polar Bear";
-    polarbearPicture.image = [UIImage imageNamed:@"polar_bear.jpeg"];
-    polarbearPicture.alphaSlider = .5;
-    
-    [_imageArray addObject:polarbearPicture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -229,30 +212,6 @@ bool _maximizedMode = false;
     }
     
 }
-
-- (IBAction)_addPicture:(id)sender {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    }
-    else
-    {
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    }
-
-    [imagePicker setDelegate:self];
-
-    [self presentModalViewController:imagePicker animated:YES];
-}
-
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [_imageButton setImage:image forState: UIControlStateNormal];
-    [self dismissModalViewControllerAnimated:YES];
-}
-
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

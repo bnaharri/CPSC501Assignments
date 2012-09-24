@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "assignmentOne/pictureManipulatorViewController.m"
-         timestampString = "370193566.030575"
+         timestampString = "370069172.484542"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "148"
-         endingLineNumber = "148"
+         startingLineNumber = "130"
+         endingLineNumber = "130"
          landmarkName = "-doneEditing:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,24 +21,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "assignmentOne/pictureManipulatorViewController.m"
-         timestampString = "370193566.030575"
+         timestampString = "370069172.484542"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "151"
-         endingLineNumber = "151"
+         startingLineNumber = "133"
+         endingLineNumber = "133"
          landmarkName = "-doneEditing:"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "assignmentOne/pictureManipulatorViewController.m"
-         timestampString = "370191910.772645"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

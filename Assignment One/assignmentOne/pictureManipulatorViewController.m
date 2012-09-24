@@ -229,16 +229,7 @@ bool _maximizedMode = false;
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    pictureModel *newImage = [[pictureModel alloc] init];
-    
-    newImage.image = image;
-    newImage.labelText = @"New Image!";
-    newImage.hideLabel = false;
-    newImage.alphaSlider = .5;
-    [_imageArray addObject:newImage];
-    _selectedIndex = [_imageArray count]-1;
-    
-    [_imageSelector insertSegmentWithTitle:[NSString stringWithFormat:@"%d", [_imageArray count]] atIndex:_selectedIndex animated:false];
+    [_imageButton setImage:image forState: UIControlStateNormal];
     [self dismissModalViewControllerAnimated:YES];
 }
 

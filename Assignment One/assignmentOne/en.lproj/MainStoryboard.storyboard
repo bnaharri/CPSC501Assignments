@@ -15,7 +15,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-hJ-7tg">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="229" id="1aY-ZN-DLF"/>
-                                    <constraint firstAttribute="width" constant="211" id="Nc8-nt-dWq"/>
+                                    <constraint firstAttribute="width" constant="203" id="K7g-s4-kai"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" image="penguin-chick.jpeg">
@@ -66,8 +66,8 @@
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-hy-M0N">
                                 <segments>
-                                    <segment title="1"/>
-                                    <segment title="2"/>
+                                    <segment title="Penguin"/>
+                                    <segment title="Polar Bear"/>
                                 </segments>
                                 <connections>
                                     <action selector="swapPhotos:" destination="2" eventType="valueChanged" id="1jP-An-5mG"/>
@@ -117,29 +117,27 @@
                         <constraints>
                             <constraint firstItem="6wC-W3-uBR" firstAttribute="baseline" secondItem="F0w-hy-M0N" secondAttribute="baseline" type="default" id="6hy-kh-1Rn"/>
                             <constraint firstAttribute="bottom" secondItem="kAv-RT-6a2" secondAttribute="bottom" constant="165" id="8wU-hS-5ys"/>
-                            <constraint firstAttribute="bottom" secondItem="a3B-WF-NT7" secondAttribute="bottom" constant="71" id="AFC-ue-wLN"/>
-                            <constraint firstItem="F0w-hy-M0N" firstAttribute="bottom" secondItem="6wC-W3-uBR" secondAttribute="bottom" type="default" id="APL-8l-W0N"/>
                             <constraint firstItem="JDc-hJ-7tg" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Apu-DN-lLt"/>
+                            <constraint firstItem="F0w-hy-M0N" firstAttribute="top" secondItem="a3B-WF-NT7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BPJ-j1-EPM"/>
                             <constraint firstItem="uRG-mN-YQG" firstAttribute="trailing" secondItem="a3B-WF-NT7" secondAttribute="trailing" type="default" id="CDC-AE-Hsr"/>
-                            <constraint firstItem="6wC-W3-uBR" firstAttribute="leading" secondItem="F0w-hy-M0N" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="CMC-qB-Q3x"/>
                             <constraint firstItem="kAv-RT-6a2" firstAttribute="trailing" secondItem="pq9-IS-Yyn" secondAttribute="trailing" type="default" id="F13-eG-s0g"/>
                             <constraint firstItem="uRG-mN-YQG" firstAttribute="baseline" secondItem="pq9-IS-Yyn" secondAttribute="baseline" type="default" id="I5f-Js-MHj"/>
-                            <constraint firstAttribute="bottom" secondItem="F0w-hy-M0N" secondAttribute="bottom" constant="19" id="O63-Gh-c97"/>
-                            <constraint firstItem="F0w-hy-M0N" firstAttribute="top" secondItem="6wC-W3-uBR" secondAttribute="top" type="default" id="Osd-mK-Nxm"/>
-                            <constraint firstItem="JDc-hJ-7tg" firstAttribute="trailing" secondItem="iYm-lV-JHs" secondAttribute="trailing" type="default" id="RGM-K8-0S8"/>
-                            <constraint firstItem="JDc-hJ-7tg" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="T2u-Rn-7tR"/>
                             <constraint firstItem="OoD-Vw-hq0" firstAttribute="trailing" secondItem="JDc-hJ-7tg" secondAttribute="trailing" type="default" id="TMb-fl-dyU"/>
-                            <constraint firstItem="F0w-hy-M0N" firstAttribute="leading" secondItem="a3B-WF-NT7" secondAttribute="leading" type="default" id="TMy-8W-pUc"/>
-                            <constraint firstItem="F0w-hy-M0N" firstAttribute="trailing" secondItem="a3B-WF-NT7" secondAttribute="trailing" type="default" id="W1q-oO-Pia"/>
                             <constraint firstItem="pq9-IS-Yyn" firstAttribute="leading" secondItem="a3B-WF-NT7" secondAttribute="leading" type="default" id="ai9-X0-ezo"/>
+                            <constraint firstItem="F0w-hy-M0N" firstAttribute="trailing" secondItem="a3B-WF-NT7" secondAttribute="trailing" type="default" id="gx8-d8-g0Q"/>
                             <constraint firstItem="uRG-mN-YQG" firstAttribute="trailing" secondItem="iYm-lV-JHs" secondAttribute="trailing" type="default" id="h0o-GJ-Qfn"/>
+                            <constraint firstItem="F0w-hy-M0N" firstAttribute="leading" secondItem="a3B-WF-NT7" secondAttribute="leading" type="default" id="hNE-6o-Abd"/>
                             <constraint firstItem="OoD-Vw-hq0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ihd-qT-BoV"/>
                             <constraint firstItem="kAv-RT-6a2" firstAttribute="leading" secondItem="JDc-hJ-7tg" secondAttribute="leading" type="default" id="iiI-h5-nWH"/>
                             <constraint firstAttribute="bottom" secondItem="iYm-lV-JHs" secondAttribute="bottom" constant="163" id="jqZ-B3-8pM"/>
+                            <constraint firstAttribute="bottom" secondItem="F0w-hy-M0N" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="kic-YC-o9C"/>
+                            <constraint firstItem="OoD-Vw-hq0" firstAttribute="trailing" secondItem="iYm-lV-JHs" secondAttribute="trailing" type="default" id="msR-fJ-ex7"/>
                             <constraint firstItem="uRG-mN-YQG" firstAttribute="top" secondItem="pq9-IS-Yyn" secondAttribute="top" type="default" id="rmg-P6-j5n"/>
                             <constraint firstItem="a3B-WF-NT7" firstAttribute="top" secondItem="pq9-IS-Yyn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="t3M-xF-x91"/>
+                            <constraint firstItem="a3B-WF-NT7" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="thS-kP-p8p"/>
                             <constraint firstItem="pq9-IS-Yyn" firstAttribute="leading" secondItem="kAv-RT-6a2" secondAttribute="leading" type="default" id="tw3-ew-lMH"/>
                             <constraint firstItem="a3B-WF-NT7" firstAttribute="top" secondItem="uRG-mN-YQG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uZF-Ph-ac9"/>
+                            <constraint firstItem="6wC-W3-uBR" firstAttribute="leading" secondItem="F0w-hy-M0N" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wfM-bq-BUX"/>
                         </constraints>
                         <connections>
                             <action selector="tappedTheBackGround:" destination="2" eventType="touchDown" id="oTu-hl-yxq"/>
@@ -166,36 +164,6 @@
         <image name="maximize_icon.png" width="128" height="128"/>
         <image name="penguin-chick.jpeg" width="404" height="500"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="pictureManipulatorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/pictureManipulatorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="_addPicture:"/>
-                <relationship kind="action" name="_maximizePressed:"/>
-                <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="action" name="dragImage:forEvent:"/>
-                <relationship kind="action" name="imageClicked:forEvent:"/>
-                <relationship kind="action" name="labelsOff:"/>
-                <relationship kind="action" name="swapPhotos:"/>
-                <relationship kind="action" name="tappedTheBackGround:"/>
-                <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
-                <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>
-                <relationship kind="action" name="valueChanged:"/>
-                <relationship kind="outlet" name="_labelSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="_maximizeImageButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="addPhotoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="alphaField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="alphaSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="imageButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageLabel" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageSelector" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="opacityLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

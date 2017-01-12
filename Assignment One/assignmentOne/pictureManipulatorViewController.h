@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <math.h>
-#import "pictureModel.h"
 
-@interface pictureManipulatorViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface pictureManipulatorViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *_maximizeImageButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *imageSelector;
 @property (weak, nonatomic) IBOutlet UILabel *opacityLabel;
@@ -20,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *alphaField;
 - (IBAction)valueChanged:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *imageLabel;
-@property (weak, nonatomic) IBOutlet UIButton *addPhotoButton;
 @property (weak, nonatomic) IBOutlet UISlider *alphaSlider;
 - (IBAction)dragImage:(id)sender forEvent:(UIEvent *)event;
 - (IBAction)imageClicked:(id)sender forEvent:(UIEvent *)event;
@@ -32,6 +30,5 @@
 - (IBAction)textFieldDidEndEditing:(UITextField *)textField;
 - (IBAction)textFieldDidBeginEditing:(UITextField *)textField;
 - (IBAction)_maximizePressed:(id)sender;
-- (IBAction)_addPicture:(id)sender;
 
 @end
